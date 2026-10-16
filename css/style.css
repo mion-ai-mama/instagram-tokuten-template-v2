@@ -119,6 +119,8 @@ a:focus-visible, button:focus-visible {
   display: grid; gap: 18px; padding: 24px var(--gutter);
   background: var(--c-section); border-radius: var(--radius-m);
 }
+.cta-soft__image { display: block; border-radius: var(--radius-s); overflow: hidden; border: 1px solid var(--c-line); background: #fff; }
+.cta-soft__image img { width: 100%; height: auto; }
 .cta-soft__title { margin: 0 0 6px; font-family: var(--font-serif); font-size: 19px; color: var(--c-ink); line-height: 1.5; }
 .cta-soft p { font-size: 14.5px; }
 .cta-soft .btn { justify-self: start; }
@@ -206,6 +208,7 @@ a:focus-visible, button:focus-visible {
   .learn { grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
   .cta-soft { grid-template-columns: 1fr auto; align-items: center; gap: 32px; padding: 28px 36px; }
   .cta-soft .btn { justify-self: end; }
+  .cta-soft__image { grid-column: 1 / -1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

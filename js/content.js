@@ -35,6 +35,11 @@ const CONTENT = {
     heading: "AIをもっと仕事に活かしたい方へ",
     text: "AIを使って、自分の働き方の選択肢を広げたい方に、無料で学べる情報をお届けしています。",
     buttonText: "無料で受け取る →",
+    // ボックス上部の画像（タップでLINEへ）。不要なら null
+    image: {
+      src: "assets/images/textbook-benefits.jpg",
+      alt: "AIマネタイズの教科書 5大特典。1 いま一番始めやすいAIマネタイズ手法、2 ChatGPT収益化プロンプト3選、3 AIマネタイズ神テンプレート、4 マネタイズのための生成AIツール3選、5 AI×SNSで収益を生むリアル事例",
+    },
   },
 
   // SECTION 03：この特典でわかること（3〜5項目）

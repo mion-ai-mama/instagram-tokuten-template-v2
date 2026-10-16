@@ -44,9 +44,13 @@
   }
 
   function topCta(c, url) {
+    const image = c.image
+      ? `<a class="cta-soft__image" href="${esc(url)}" target="_blank" rel="noopener"><img src="${esc(c.image.src)}" alt="${esc(c.image.alt)}" width="1855" height="848"></a>`
+      : "";
     return `
     <section class="container" aria-labelledby="top-cta-title">
       <div class="cta-soft">
+        ${image}
         <div class="cta-soft__text">
           <h2 class="cta-soft__title" id="top-cta-title">${c.heading}</h2>
           <p>${c.text}</p>
