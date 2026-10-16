@@ -121,7 +121,7 @@ const CONTENT = {
   textbook: {
     // 特典の内容に合わせて毎回書き直す「橋渡し」の一文
     bridge: "今回紹介した方法は、AIの活用法のほんの一例です。実際の仕事や日々の作業にどう活かすかを知ることで、できることはさらに広がります。",
-    banner: "assets/images/cta-banner.png",
+    banner: "assets/images/cta-banner.jpg",
     bannerAlt: "無料プレゼント AIマネタイズ教科書。AIで働き方の選択肢を広げたい方へ。LINE登録はこちら",
     support:
       "また、「何から始めたらいいのかわからない」「自分には何が向いているのか相談したい」という方に向けて、<strong>AI収益化サポート会</strong>も実施中です。個別でのご相談も、LINEから受け付けています。",
