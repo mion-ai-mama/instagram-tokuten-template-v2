@@ -37,7 +37,7 @@ const CONTENT = {
     buttonText: "無料で受け取る →",
     // ボックス上部の画像（タップでLINEへ）。不要なら null
     image: {
-      src: "assets/images/textbook-benefits.jpg",
+      src: "assets/images/textbook-benefits.jpg?v=2",
       alt: "AIマネタイズの教科書 5大特典。1 いま一番始めやすいAIマネタイズ手法、2 ChatGPT収益化プロンプト3選、3 AIマネタイズ神テンプレート、4 マネタイズのための生成AIツール3選、5 AI×SNSで収益を生むリアル事例",
     },
   },
@@ -113,7 +113,7 @@ const CONTENT = {
   // SECTION 06：LINE誘導のつなぎ（①）。この特典のテーマに合わせて毎回書く。②〜⑤は js/line-cta.js の共通文章
   // 書き方: 「今回紹介した〇〇は、△△方法のひとつ。でも、〜は、これだけではありません。」（です・ます調。話し言葉にしない）
   // 収入に関係しない特典を無理に「収入を作る方法」と言わない。読者の期待を否定しない
-  lineIntro: "今回紹介したAIチームの作り方は、AIに仕事を任せる方法のひとつ。でも、AIでできることは、これだけではありません。",
+  lineIntro: "今回紹介したAIチームの作り方は、AIに仕事を任せる方法のひとつです。",
 
   footer: {
     copyright: "© MION",
