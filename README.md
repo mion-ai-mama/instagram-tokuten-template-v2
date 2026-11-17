@@ -8,7 +8,8 @@
 2. `js/content.js` を書き換える（文章・STEP・画像・プロンプト。LINEリンクは `lineUrl`）
 3. 画面キャプチャを `assets/images/` に置き、各STEPの `figures` で指定する
 4. 写真ありバージョン: `hero.avatar = { src: "assets/images/profile-icon.jpg", alt, name }` ／ なしバージョン: `null`
-5. GitHub Pages（main）で公開する
+5. LINE誘導は、`js/content.js` の `lineIntro`（①つなぎ）だけをこの特典用に書く。②〜⑤は `js/line-cta.js` の共通文章（書き換えない）
+6. GitHub Pages（main）で公開する
 
 見た目の調整は `css/style.css` の `:root`、設計の基準は `docs/requirements.md` を参照してください。
 

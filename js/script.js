@@ -132,21 +132,37 @@
     </section>`;
   }
 
-  function finalCta(c, t, url) {
+  // LINE誘導: ①つなぎ(content.js) → ②体験談 → ③選択肢 → ④教科書のメリット → ⑤CTA（②〜⑤は line-cta.js）
+  function finalCta(intro, l, url) {
+    const paras = (arr) => arr.map((t) => `<p>${t}</p>`).join("");
+    const questions = l.options.questions.map((q) => `<li>${q}</li>`).join("");
+    const items = l.textbook.items
+      .map((it) => `<li class="line-guide__item"><strong>${it.name}</strong><span>${it.benefit}</span></li>`)
+      .join("");
     return `
-    <section class="section" aria-labelledby="final-cta-title">
+    <section class="section" id="line" aria-label="LINEのご案内">
       <div class="container">
+        <div class="line-guide">
+          <p class="line-guide__intro">${intro}</p>
+          <div class="line-guide__story">${paras(l.story)}</div>
+          <div class="line-guide__options">
+            <p>${l.options.lead}</p>
+            <ul class="line-guide__questions">${questions}</ul>
+            <p>${l.options.closing}</p>
+          </div>
+        </div>
         <div class="cta-final">
-          <h2 class="cta-final__title" id="final-cta-title">${c.heading}</h2>
-          <p>${c.text}</p>
-          ${arrow(url, c.buttonText, "btn--large")}
+          <h2 class="cta-final__title" id="final-cta-title">${l.textbook.heading}</h2>
+          <p class="cta-final__lead">${l.textbook.lead}</p>
+          <ul class="line-guide__items">${items}</ul>
+          ${arrow(url, l.buttonText, "btn--large")}
+          <p class="cta-final__caution">${l.caution}</p>
         </div>
         <div class="textbook">
-          <p>${t.bridge}</p>
           <a class="textbook__banner" href="${esc(url)}" target="_blank" rel="noopener">
-            <img src="${esc(t.banner)}" alt="${esc(t.bannerAlt)}" loading="lazy">
+            <img src="${esc(l.banner)}" alt="${esc(l.bannerAlt)}" loading="lazy">
           </a>
-          <p>${t.support}</p>
+          <p>${l.support}</p>
         </div>
       </div>
     </section>`;
@@ -185,7 +201,7 @@
 
   function init() {
     const main = document.getElementById("main");
-    if (typeof CONTENT === "undefined") return;
+    if (typeof CONTENT === "undefined" || typeof LINE_CTA === "undefined") return;
     const c = CONTENT;
     applyMeta(c.meta);
     main.innerHTML =
@@ -194,7 +210,7 @@
       learn(c.learn) +
       c.steps.map(step).join("") +
       summary(c.summary) +
-      finalCta(c.finalCta, c.textbook, c.lineUrl);
+      finalCta(c.lineIntro, LINE_CTA, c.lineUrl);
     document.getElementById("footer").innerHTML = `<p>${c.footer.copyright}</p><p>${c.footer.notice}</p>`;
     bind();
   }
